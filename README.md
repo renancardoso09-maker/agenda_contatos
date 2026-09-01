@@ -1,45 +1,58 @@
-# 📇 Agenda de Contatos — Versão V.0.2.0 (List & ArrayList)
+# 📇 Agenda de Contatos — Versão V.0.3.0 (CRUD Completo com `set()`)
 
 ---
 
 ## 📌 Visão Geral do Projeto
 
-O projeto **Agenda de Contatos** é desenvolvido de forma incremental ao longo da disciplina de POO. Na versão **V.0.2.0**, a aplicação evolui do uso de arrays de tamanho fixo (V.0.1.0) para a utilização de coleções dinâmicas com **`List`** e **`ArrayList`** (`java.util.List` e `java.util.ArrayList`).
+O projeto **Agenda de Contatos** é desenvolvido de forma incremental ao longo da disciplina de POO. Na versão **V.0.3.0**, a aplicação atinge a maturidade funcional ao introduzir a operação de **Alteração de Contatos**, completando formalmente o ciclo **CRUD** (*Create, Read, Update, Delete*).
 
-Esta versão introduz o armazenamento de dados com capacidade dinâmica e demonstra o uso de métodos nativos da biblioteca padrão do Java (`add()`, `get()`, `remove()` e `size()`), eliminando a necessidade de controle prévio de limite da agenda e de deslocamentos manuais de elementos após exclusões.
+Aproveitando a estrutura de coleções dinâmicas (**`List`** e **`ArrayList`**) estabelecida na versão anterior, esta versão introduz o método nativo **`set()`**, responsável por substituir elementos existentes em posições específicas das listas dinâmicas paralelas (`nomes`, `celulares` e `emails`).
 
 ---
 
-## 🚀 Funcionalidades da Versão V.0.2.0
+## 🚀 Funcionalidades da Versão V.0.3.0
 
-- ➕ **Adicionar Contato:** Insere nome, celular e e-mail no final das listas dinâmicas utilizando o método `add()`.
-- 📋 **Listar Contatos:** Exibe os contatos cadastrados percorrendo as listas via laço `for` com `get(i)` até a quantidade retornada por `size()`.
-- 🔍 **Procurar Contato:** Pesquisa um contato pelo nome (utilizando `equalsIgnoreCase()`) e exibe as informações armazenadas no índice correspondente.
-- 🗑️ **Excluir Contato:** Remove o contato das listas paralelas utilizando `remove(indiceExcluir)`, deixando a reorganização dos elementos a cargo da coleção.
-- ⚡ **Armazenamento Dinâmico:** Permite cadastrar contatos sem definir limite fixo, eliminando a verificação de agenda cheia e a variável de controle manual `cont`.
+* ➕ **Adicionar Contato (Create):** Insere novos registros dinamicamente no final das listas com o método `add()`.
+* 📋 **Listar Contatos (Read):** Exibe todos os contatos cadastrados percorrendo as coleções com `get(i)` até o tamanho indicado por `size()`.
+* 🔍 **Procurar Contato (Read):** Pesquisa um contato pelo nome (via `equalsIgnoreCase()`) e exibe as informações correspondentes.
+* ✏️ **Alterar Contato (Update) — *Novidade*:** Localiza a posição de um contato existente e substitui seus dados antigos por novos valores utilizando o método `set()`.
+* 🗑️ **Excluir Contato (Delete):** Remove o registro da posição selecionada usando `remove()`, mantendo o reorganização automática dos índices.
+* 🛡️ **Tratamento de Registro Ausente:** Exibe mensagens informativas ao tentar alterar ou excluir contatos não localizados na agenda.
 
 ---
 
 ## 🔄 Evolução Incremental das Versões
 
-| Versão | Estrutura de Armazenamento | Conceitos Trabalhados | Limitações / Características |
+| Versão | Estrutura de Armazenamento | Conceitos Trabalhados | Limitações / Evolução |
 | :--- | :--- | :--- | :--- |
 | **V.0.0.0** | Variáveis simples (`String`) | `Scanner`, `if-else`, `switch-case`, laços de repetição | Armazena apenas 1 contato por vez. |
-| **V.0.1.0** | Arrays fixos (`String[]`) | Vetores, índices, tamanho fixo, laço `for`, deslocamento manual | Armazena vários contatos, mas com capacidade pré-definida e estática. |
-| **V.0.2.0** *(Atual)* | **`List` + `ArrayList`** | **Coleções Java, tamanho dinâmico, `add()`, `get()`, `remove()`, `size()`** | **Suporta contatos ilimitados dinamicamente; mantém os dados em três listas paralelas.** |
+| **V.0.1.0** | Arrays fixos (`String[]`) | Vetores, índices, capacidade fixa, laço `for`, deslocamento manual | Suporta múltiplos contatos, porém com limite estático. |
+| **V.0.2.0** | `List` + `ArrayList` | Coleções Java, capacidade dinâmica, `add()`, `get()`, `remove()`, `size()` | Elimina limite fixo, mas não permite alterar registros já criados. |
+| **V.0.3.0** *(Atual)* | **`List` + `ArrayList` com `set()`** | **Substituição de elementos com `set()`, Mapeamento CRUD Completo** | **Completa as quatro operações fundamentais (Create, Read, Update, Delete).** |
 
 ---
 
-## 📊 Comparativo: Array (V.0.1.0) vs ArrayList (V.0.2.0)
+## 💡 Mapeamento CRUD & Métodos Java sobre `ArrayList`
 
-| Operação | Array (V.0.1.0) | ArrayList (V.0.2.0) |
+Nesta versão, todas as operações básicas de gerenciamento de dados sobre `ArrayList` são consolidadas:
+
+| Operação CRUD | Funcionalidade na Agenda | Método Java (`List` / `ArrayList`) |
 | :--- | :--- | :--- |
-| **Criação** | `new String[capacidade]` | `new ArrayList<>()` |
-| **Capacidade** | Fixa | Dinâmica |
-| **Adicionar** | `nomes[cont] = nome` | `nomes.add(nome)` |
-| **Acessar** | `nomes[i]` | `nomes.get(i)` |
-| **Quantidade** | `cont` | `nomes.size()` |
-| **Excluir** | Deslocamento manual | `nomes.remove(i)` |
+| **C**reate | Adicionar contato | `add(elemento)` |
+| **R**ead | Listar / Procurar contato | `get(indice)` / `size()` |
+| **U**pdate | Alterar contato | `set(indice, novoElemento)` |
+| **D**elete | Excluir contato | `remove(indice)` |
+
+---
+
+## 📊 Comparativo de Operações em Coleções: `add()` vs `set()`
+
+| Característica | Método `add()` (V.0.2.0) | Método `set()` (V.0.3.0) |
+| :--- | :--- | :--- |
+| **Ação** | Insere um novo elemento no final da lista | Substitui o valor existente em uma posição específica |
+| **Tamanho da Lista (`size`)** | Aumenta em +1 | Permanece inalterado |
+| **Parâmetros** | `add(valor)` | `set(posicao, novoValor)` |
+| **Finalidade** | Cadastro / Criação (Create) | Edição / Atualização (Update) |
 
 ---
 
@@ -47,8 +60,8 @@ Esta versão introduz o armazenamento de dados com capacidade dinâmica e demons
 
 ```text
 .
-├── Principal.java    # Código-fonte principal com a estrutura do menu e execução
-└── README.md         # Documentação da versão V.0.2.0
+├── Principal.java    # Código-fonte principal com a estrutura do menu e execução do CRUD
+└── README.md         # Documentação da versão V.0.3.0
 ```
 
 ---
