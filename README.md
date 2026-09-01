@@ -1,31 +1,45 @@
-# 📇 Agenda de Contatos — Versão V.0.1.0 (Arrays / Vetores)
-
-
-## 📌 Visão Geral do Projeto
-
-O projeto **Agenda de Contatos** é desenvolvido de forma incremental ao longo da disciplina de POO. Na versão **V.0.1.0**, o sistema evolui da utilização de variáveis simples unitárias (V.0.0.0) para **arrays de tamanho fixo (`String[]`)**.
-
-Esta etapa tem como objetivo consolidar os conceitos de **manipulação de vetores, índices, controle de limite/capacidade e deslocamento manual de elementos**, antes do aprendizado de coleções dinâmicas (`ArrayList`) (V.0.2.0+).
+# 📇 Agenda de Contatos — Versão V.0.2.0 (List & ArrayList)
 
 ---
 
-## 🚀 Funcionalidades da Versão V.0.1.0
+## 📌 Visão Geral do Projeto
 
-- ➕ **Adicionar Contato:** Cadastra nome, celular e e-mail no vetor.
-- 📋 **Listar Contatos:** Exibe todos os contatos atualmente armazenados.
-- 🔍 **Procurar Contato:** Pesquisa contatos pelo nome (busca insensível a maiúsculas/minúsculas).
-- 🗑️ **Excluir Contato:** Remove um contato pelo nome e reorganiza o vetor (deslocamento à esquerda).
-- ⚠️ **Tratamento de Capacidade:** Previne erros de estouro de memória (`ArrayIndexOutOfBoundsException`) quando a agenda atinge o limite máximo.
+O projeto **Agenda de Contatos** é desenvolvido de forma incremental ao longo da disciplina de POO. Na versão **V.0.2.0**, a aplicação evolui do uso de arrays de tamanho fixo (V.0.1.0) para a utilização de coleções dinâmicas com **`List`** e **`ArrayList`** (`java.util.List` e `java.util.ArrayList`).
+
+Esta versão introduz o armazenamento de dados com capacidade dinâmica e demonstra o uso de métodos nativos da biblioteca padrão do Java (`add()`, `get()`, `remove()` e `size()`), eliminando a necessidade de controle prévio de limite da agenda e de deslocamentos manuais de elementos após exclusões.
+
+---
+
+## 🚀 Funcionalidades da Versão V.0.2.0
+
+- ➕ **Adicionar Contato:** Insere nome, celular e e-mail no final das listas dinâmicas utilizando o método `add()`.
+- 📋 **Listar Contatos:** Exibe os contatos cadastrados percorrendo as listas via laço `for` com `get(i)` até a quantidade retornada por `size()`.
+- 🔍 **Procurar Contato:** Pesquisa um contato pelo nome (utilizando `equalsIgnoreCase()`) e exibe as informações armazenadas no índice correspondente.
+- 🗑️ **Excluir Contato:** Remove o contato das listas paralelas utilizando `remove(indiceExcluir)`, deixando a reorganização dos elementos a cargo da coleção.
+- ⚡ **Armazenamento Dinâmico:** Permite cadastrar contatos sem definir limite fixo, eliminando a verificação de agenda cheia e a variável de controle manual `cont`.
 
 ---
 
 ## 🔄 Evolução Incremental das Versões
 
-| Versão | Estrutura de Dados | Conceitos Trabalhados | Limitações |
+| Versão | Estrutura de Armazenamento | Conceitos Trabalhados | Limitações / Características |
 | :--- | :--- | :--- | :--- |
-| **V.0.0.0** | Variáveis Simples (`String`) | `Scanner`, `if-else`, `switch-case`, `while` | Armazena apenas 1 contato por vez. |
-| **V.0.1.0** *(Atual)* | **Arrays Fixos (`String[]`)** | **Vetores, índices, controle de quantidade, laço `for`, deslocamento** | Capacidade fixa e gestão manual de posições. |
-| **V.0.2.0** | `List` + `ArrayList` | Coleções dinâmicas, `add()`, `remove()`, `size()` | Elimina a necessidade de vetor fixo e shift manual. |
+| **V.0.0.0** | Variáveis simples (`String`) | `Scanner`, `if-else`, `switch-case`, laços de repetição | Armazena apenas 1 contato por vez. |
+| **V.0.1.0** | Arrays fixos (`String[]`) | Vetores, índices, tamanho fixo, laço `for`, deslocamento manual | Armazena vários contatos, mas com capacidade pré-definida e estática. |
+| **V.0.2.0** *(Atual)* | **`List` + `ArrayList`** | **Coleções Java, tamanho dinâmico, `add()`, `get()`, `remove()`, `size()`** | **Suporta contatos ilimitados dinamicamente; mantém os dados em três listas paralelas.** |
+
+---
+
+## 📊 Comparativo: Array (V.0.1.0) vs ArrayList (V.0.2.0)
+
+| Operação | Array (V.0.1.0) | ArrayList (V.0.2.0) |
+| :--- | :--- | :--- |
+| **Criação** | `new String[capacidade]` | `new ArrayList<>()` |
+| **Capacidade** | Fixa | Dinâmica |
+| **Adicionar** | `nomes[cont] = nome` | `nomes.add(nome)` |
+| **Acessar** | `nomes[i]` | `nomes.get(i)` |
+| **Quantidade** | `cont` | `nomes.size()` |
+| **Excluir** | Deslocamento manual | `nomes.remove(i)` |
 
 ---
 
@@ -33,13 +47,9 @@ Esta etapa tem como objetivo consolidar os conceitos de **manipulação de vetor
 
 ```text
 .
-├── Principal.java    # Código fonte completo da aplicação Java
-└── README.md         # Documentação detalhada da versão V.0.1.0
+├── Principal.java    # Código-fonte principal com a estrutura do menu e execução
+└── README.md         # Documentação da versão V.0.2.0
 ```
 
 ---
-*IFCE Campus Maranguape 
-        └── edu/
-            └── principal/
-                └── Principal.java
-```
+*IFCE Campus Maranguape — Disciplina de Programação Orientada a Objetos*
