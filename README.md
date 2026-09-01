@@ -1,44 +1,44 @@
-# Agenda de Contatos - V.0.0.0
+# 📇 Agenda de Contatos — Versão V.0.1.0 (Arrays / Vetores)
 
-Projeto didático de desenvolvimento incremental para a disciplina de **Programação Orientada a Objetos (POO)** do **Instituto Federal de Educação, Ciência e Tecnologia do Ceará (IFCE) - Campus Maranguape**.
 
----
+## 📌 Visão Geral do Projeto
 
-## 📌 Sobre a Versão V.0.0.0
+O projeto **Agenda de Contatos** é desenvolvido de forma incremental ao longo da disciplina de POO. Na versão **V.0.1.0**, o sistema evolui da utilização de variáveis simples unitárias (V.0.0.0) para **arrays de tamanho fixo (`String[]`)**.
 
-A versão **V.0.0.0** representa a etapa inicial do projeto Agenda de Contatos. Trata-se de uma aplicação de console em Java desenvolvida de forma procedural, contida inteiramente dentro de uma única classe (`Principal`) e método (`main`).
-
-### ⚠️ Limitação
-Armazena **apenas um contato por vez** na memória, utilizando três variáveis do tipo `String` (`nome`, `celular`, `email`). Um novo cadastro substitui o contato armazenado anteriormente.
+Esta etapa tem como objetivo consolidar os conceitos de **manipulação de vetores, índices, controle de limite/capacidade e deslocamento manual de elementos**, antes do aprendizado de coleções dinâmicas (`ArrayList`) (V.0.2.0+).
 
 ---
 
-## 🚀 Funcionalidades
+## 🚀 Funcionalidades da Versão V.0.1.0
 
-1. **Adicionar contato:** Recebe e armazena o nome, celular e e-mail.
-2. **Listar contato:** Exibe o contato atualmente armazenado.
-3. **Procurar contato:** Realiza busca pelo nome do contato.
-4. **Excluir contato:** Reseta as variáveis do contato.
-5. **Sair:** Encerra a execução do programa.
-
----
-
-## 🛠️ Tecnologias e Conceitos Utilizados
-
-- **Linguagem:** Java
-- **Entrada de Dados:** `java.util.Scanner`
-- **Estruturas de Controle:** `switch-case`, `if-else`
-- **Estrutura de Repetição:** `while`
-- **Tipos e Métodos:** `String`, `int`, `boolean`, `isEmpty()`, `equalsIgnoreCase()`
+- ➕ **Adicionar Contato:** Cadastra nome, celular e e-mail no vetor.
+- 📋 **Listar Contatos:** Exibe todos os contatos atualmente armazenados.
+- 🔍 **Procurar Contato:** Pesquisa contatos pelo nome (busca insensível a maiúsculas/minúsculas).
+- 🗑️ **Excluir Contato:** Remove um contato pelo nome e reorganiza o vetor (deslocamento à esquerda).
+- ⚠️ **Tratamento de Capacidade:** Previne erros de estouro de memória (`ArrayIndexOutOfBoundsException`) quando a agenda atinge o limite máximo.
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🔄 Evolução Incremental das Versões
+
+| Versão | Estrutura de Dados | Conceitos Trabalhados | Limitações |
+| :--- | :--- | :--- | :--- |
+| **V.0.0.0** | Variáveis Simples (`String`) | `Scanner`, `if-else`, `switch-case`, `while` | Armazena apenas 1 contato por vez. |
+| **V.0.1.0** *(Atual)* | **Arrays Fixos (`String[]`)** | **Vetores, índices, controle de quantidade, laço `for`, deslocamento** | Capacidade fixa e gestão manual de posições. |
+| **V.0.2.0** | `List` + `ArrayList` | Coleções dinâmicas, `add()`, `remove()`, `size()` | Elimina a necessidade de vetor fixo e shift manual. |
+
+---
+
+## 📂 Estrutura de Arquivos
 
 ```text
-AgendaContatos/
-└── src/
-    └── br/
+.
+├── Principal.java    # Código fonte completo da aplicação Java
+└── README.md         # Documentação detalhada da versão V.0.1.0
+```
+
+---
+*IFCE Campus Maranguape 
         └── edu/
             └── principal/
                 └── Principal.java
