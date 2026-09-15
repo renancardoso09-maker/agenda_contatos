@@ -27,7 +27,7 @@ public class Principal {
                 case 3-> Agenda.pesquisar(sc, nomes, celulares, emails);
                 case 4-> Agenda.atualizar(sc, nomes, celulares, emails);           	
                 case 5-> Agenda.excluir(sc, nomes, celulares, emails);          	
-                case 6-> Uteis.sair(continuar);
+                case 6-> continuar = Uteis.sair();
                 case 7-> Uteis.sobre();
                 default -> System.out.println("Opção inválida!");
             }
@@ -38,7 +38,7 @@ public class Principal {
     public static void mostraInicializacao() {
     	System.out.println("==========================");
         System.out.println("     AGENDA DE CONTATOS    ");
-        System.out.println("          v1.0.0           ");
+        System.out.println("          v1.1.1           ");
         System.out.println("==========================");
         System.out.println("Bem-vindo!");
     }
