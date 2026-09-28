@@ -8,17 +8,21 @@ public class Principal {
 	
 	public static void main(String[] args) {
 
+
         List<String> nomes = new ArrayList<>();
         List<String> celulares = new ArrayList<>();
         List<String> emails = new ArrayList<>();
+        Persistencia.carregarContatos(nomes, celulares, emails);
+        
         int opcao;
         boolean continuar = true;
+        
         Scanner sc = new Scanner(System.in);
-
-        mostraInicializacao(); 
+        
+        Uteis.mostraInicializacao(); 
 
         while (continuar) {
-        	mostraMenu();
+        	Uteis.mostraMenu();
             opcao = Uteis.selecionaOpcao(sc);
 
             switch (opcao) {
@@ -27,32 +31,14 @@ public class Principal {
                 case 3-> Agenda.pesquisar(sc, nomes, celulares, emails);
                 case 4-> Agenda.atualizar(sc, nomes, celulares, emails);           	
                 case 5-> Agenda.excluir(sc, nomes, celulares, emails);          	
-                case 6-> continuar = Uteis.sair();
+                case 6-> {
+                	Persistencia.salvarContatos(nomes, celulares, emails);
+                	continuar = Uteis.sair();
+                }
                 case 7-> Uteis.sobre();
                 default -> System.out.println("Opção inválida!");
             }
         }
         sc.close();
-    }
-    
-    public static void mostraInicializacao() {
-    	System.out.println("==========================");
-        System.out.println("     AGENDA DE CONTATOS    ");
-        System.out.println("          v1.1.1           ");
-        System.out.println("==========================");
-        System.out.println("Bem-vindo!");
-    }
-    
-    public static void mostraMenu() {
-    	System.out.println();
-        System.out.println("1 - Adicionar contato");
-        System.out.println("2 - Listar contatos");
-        System.out.println("3 - Procurar contato");
-        System.out.println("4 - Alterar contato");
-        System.out.println("5 - Excluir contato");
-        System.out.println("6 - Sair");
-        System.out.println("7 - Sobre");
-    }
-    
-    
+    }	
 }
