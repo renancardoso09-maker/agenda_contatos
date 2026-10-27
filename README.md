@@ -10,17 +10,18 @@ Construir uma Agenda de Contatos completa, iniciando com uma solução procedura
 
 ## Evolução do Projeto
 
-| **Versão** | **Armazenamento / Recursos** | **Descrição**                                                                  |
-| ---------- | ---------------------------- | ------------------------------------------------------------------------------ |
-| v0.0.0     | Variáveis simples            | Permite armazenar apenas um contato em memória                                 |
-| v0.1.0     | Arrays                       | Permite vários contatos com capacidade fixa                                    |
-| v0.2.0     | List + ArrayList             | Permite vários contatos com tamanho dinâmico                                   |
-| v0.3.0     | List + ArrayList             | Adiciona a opção de alteração de contatos cadastrados                          |
-| v1.0.0     | List + ArrayList             | Modularização das funcionalidades em métodos na classe principal               |
-| v1.1.0     | List + ArrayList             | Separação das responsabilidades e métodos em arquivos/classes utilitárias      |
-| v1.1.1     | List + ArrayList             | Correção de bug no fluxo de encerramento do sistema (opção Sair)               |
-| v2.1.0     | Arquivo TXT (I/O Java)       | Persistência de dados em arquivo texto utilizando `java.io`                    |
-| v3.0.0     | Classe e Objetos             | Introdução à Programação Orientada a Objetos com a criação da classe `Contato` |
+| Versão | Armazenamento / Recursos | Descrição |
+|---|---|---|
+| v0.0.0 | Variáveis simples | Permite armazenar apenas um contato em memória |
+| v0.1.0 | Arrays | Permite vários contatos com capacidade fixa |
+| v0.2.0 | List + ArrayList | Permite vários contatos com tamanho dinâmico |
+| v0.3.0 | List + ArrayList | Adiciona a opção de alteração de contatos cadastrados |
+| v1.0.0 | List + ArrayList | Modularização das funcionalidades em métodos na classe principal |
+| v1.1.0 | List + ArrayList | Separação das responsabilidades e métodos em arquivos/classes utilitárias |
+| v1.1.1 | List + ArrayList | Correção de bug no fluxo de encerramento do sistema (opção Sair) |
+| v2.1.0 | Arquivo TXT (I/O Java) | Persistência de dados em arquivo texto utilizando `java.io` |
+| v3.0.0 | Classes e Objetos | Introdução à Programação Orientada a Objetos com a criação da classe `Contato` |
+| v3.1.0 | Coleção de Objetos | Armazenamento de objetos `Contato` utilizando `List<Contato>` |
 
 ---
 
@@ -29,7 +30,6 @@ Construir uma Agenda de Contatos completa, iniciando com uma solução procedura
 Primeira versão da Agenda.
 
 Principais características:
-
 - Uma única classe `Principal`;
 - Todo o código dentro do método `main()`;
 - Armazenamento de apenas um contato;
@@ -44,7 +44,6 @@ Principais características:
 Segunda versão da Agenda.
 
 Principais características:
-
 - Uso de arrays simples (`String[]`) para cada atributo;
 - Controle de capacidade máxima pré-definida;
 - Manipulação através de índices e estrutura `for`;
@@ -57,7 +56,6 @@ Principais características:
 Terceira versão da Agenda.
 
 Principais características:
-
 - Uso da API de Coleções do Java (`List` e `ArrayList`);
 - Uso de Generics (`<String>`);
 - Alocação e redimensionamento dinâmico;
@@ -71,7 +69,6 @@ Principais características:
 Quarta versão da Agenda.
 
 Principais características:
-
 - Nova opção no menu: **Alterar contato**;
 - Busca prévia do registro a ser modificado;
 - Atualização das listas utilizando o método `set()`.
@@ -83,7 +80,6 @@ Principais características:
 Reorganização do código procedural em funções/métodos na mesma classe.
 
 Principais alterações:
-
 - Criação dos métodos `adicionar()`, `listar()`, `pesquisar()`, `atualizar()` e `excluir()`;
 - Simplificação da estrutura do `switch-case` no `main()`;
 - Passagem de dados via parâmetros e argumentos;
@@ -96,7 +92,6 @@ Principais alterações:
 Organização e separação das responsabilidades em diferentes arquivos do projeto.
 
 Principais alterações:
-
 - Criação de classes dedicadas para auxílio e gerenciamento da agenda (`Uteis`, `Agenda`);
 - Divisão entre a interface com o usuário (menu no console) e a lógica de processamento dos dados.
 
@@ -107,7 +102,6 @@ Principais alterações:
 Versão de ajuste e refinamento da série v1.x.
 
 Principais alterações:
-
 - Correção de bug no encerramento da execução da aplicação (opção de saída do menu);
 - Garantia do fechamento correto dos fluxos de leitura do `Scanner`.
 
@@ -118,7 +112,6 @@ Principais alterações:
 Introdução da **persistência de dados**. Os contatos cadastrados deixam de ser perdidos ao encerrar a aplicação e passam a ser gravados em disco em arquivo texto formato `.txt`.
 
 Principais características e conceitos:
-
 - Leitura e escrita de dados em disco utilizando a API `java.io`;
 - Representação e verificação do arquivo com `File`;
 - Leitura estruturada linha a linha com `FileReader` e `BufferedReader`;
@@ -136,7 +129,6 @@ Início da transição da abordagem procedural para a **Programação Orientada 
 Nesta versão é criada a classe `Contato`, permitindo representar um contato como uma entidade do sistema e agrupar suas informações em um único objeto.
 
 Principais características e conceitos:
-
 - Introdução ao paradigma de Programação Orientada a Objetos;
 - Comparação entre a abordagem procedural e a abordagem orientada a objetos;
 - Identificação e modelagem da entidade `Contato`;
@@ -150,16 +142,36 @@ Principais características e conceitos:
 
 ---
 
+### v3.1.0 — Coleção de Objetos
+
+Evolução da representação dos contatos utilizando uma coleção de objetos do tipo `Contato`.
+
+Nesta versão, os conceitos de `List` e `ArrayList`, já utilizados anteriormente com `String`, são aplicados à classe `Contato`, permitindo armazenar vários contatos em uma única coleção.
+
+Principais características e conceitos:
+- Revisão de `List`, `ArrayList` e Generics;
+- Criação de uma coleção `List<Contato>`;
+- Armazenamento de objetos `Contato` utilizando o método `add()`;
+- Recuperação de objetos da coleção utilizando `get()`;
+- Percurso da coleção utilizando `for-each`;
+- Acesso aos atributos dos objetos armazenados;
+- Introdução ao conceito de referência de objetos em coleções;
+- Comparação entre listas paralelas de `String` e uma única coleção de objetos;
+- Representação de cada contato como uma entidade completa dentro da coleção.
+
+---
+
 ## Versão Atual
 
-**v3.0.0** — Introdução à Programação Orientada a Objetos com classes e objetos.
+**v3.1.0** — Armazenamento de contatos em uma coleção de objetos `List<Contato>`.
 
 ---
 
 ## Controle de Versões
 
 As versões estáveis do projeto são identificadas por tags Git:
-```
+
+```text
 - v0
   - v0.0.0
   - v0.1.0
@@ -173,4 +185,5 @@ As versões estáveis do projeto são identificadas por tags Git:
   - v2.1.0
 - v3
   - v3.0.0
+  - v3.1.0
 ```
