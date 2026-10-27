@@ -10,16 +10,17 @@ Construir uma Agenda de Contatos completa, iniciando com uma solução procedura
 
 ## Evolução do Projeto
 
-| Versão | Armazenamento / Recursos | Descrição |
-|---|---|---|
-| v0.0.0 | Variáveis simples | Permite armazenar apenas um contato em memória |
-| v0.1.0 | Arrays | Permite vários contatos com capacidade fixa |
-| v0.2.0 | List + ArrayList | Permite vários contatos com tamanho dinâmico |
-| v0.3.0 | List + ArrayList | Adiciona a opção de alteração de contatos cadastrados |
-| v1.0.0 | List + ArrayList | Modularização das funcionalidades em métodos na classe principal |
-| v1.1.0 | List + ArrayList | Separação das responsabilidades e métodos em arquivos/classes utilitárias |
-| v1.1.1 | List + ArrayList | Correção de bug no fluxo de encerramento do sistema (opção Sair) |
-| v2.1.0 | Arquivo TXT (I/O Java) | Persistência de dados em arquivo texto utilizando `java.io` |
+| **Versão** | **Armazenamento / Recursos** | **Descrição**                                                                  |
+| ---------- | ---------------------------- | ------------------------------------------------------------------------------ |
+| v0.0.0     | Variáveis simples            | Permite armazenar apenas um contato em memória                                 |
+| v0.1.0     | Arrays                       | Permite vários contatos com capacidade fixa                                    |
+| v0.2.0     | List + ArrayList             | Permite vários contatos com tamanho dinâmico                                   |
+| v0.3.0     | List + ArrayList             | Adiciona a opção de alteração de contatos cadastrados                          |
+| v1.0.0     | List + ArrayList             | Modularização das funcionalidades em métodos na classe principal               |
+| v1.1.0     | List + ArrayList             | Separação das responsabilidades e métodos em arquivos/classes utilitárias      |
+| v1.1.1     | List + ArrayList             | Correção de bug no fluxo de encerramento do sistema (opção Sair)               |
+| v2.1.0     | Arquivo TXT (I/O Java)       | Persistência de dados em arquivo texto utilizando `java.io`                    |
+| v3.0.0     | Classe e Objetos             | Introdução à Programação Orientada a Objetos com a criação da classe `Contato` |
 
 ---
 
@@ -27,25 +28,14 @@ Construir uma Agenda de Contatos completa, iniciando com uma solução procedura
 
 Primeira versão da Agenda.
 
-#### Principais características
+Principais características:
 
 - Uma única classe `Principal`;
 - Todo o código dentro do método `main()`;
 - Armazenamento de apenas um contato;
 - Variáveis `nome`, `celular` e `email`;
-- Menu interativo via console;
-- Uso de `Scanner`;
-- Uso de `if-else`;
-- Uso de `switch-case`;
-- Uso de `while`;
-- Funcionalidades:
-  - adicionar contato;
-  - listar contato;
-  - procurar contato;
-  - excluir contato;
-  - sair.
-
-Nesta versão, um novo contato substitui o contato armazenado anteriormente.
+- Menu interativo via console (`Scanner`, `if-else`, `switch-case`, `while`);
+- Funcionalidades: Adicionar, Listar, Procurar, Excluir e Sair.
 
 ---
 
@@ -53,13 +43,12 @@ Nesta versão, um novo contato substitui o contato armazenado anteriormente.
 
 Segunda versão da Agenda.
 
-#### Principais características
+Principais características:
 
 - Uso de arrays simples (`String[]`) para cada atributo;
 - Controle de capacidade máxima pré-definida;
 - Manipulação através de índices e estrutura `for`;
-- Busca sequencial nos arrays;
-- Remoção de elementos com reorganização física do array (deslocamento de itens).
+- Busca sequencial e reorganização física do array na remoção.
 
 ---
 
@@ -67,14 +56,13 @@ Segunda versão da Agenda.
 
 Terceira versão da Agenda.
 
-#### Principais características
+Principais características:
 
 - Uso da API de Coleções do Java (`List` e `ArrayList`);
 - Uso de Generics (`<String>`);
 - Alocação e redimensionamento dinâmico;
-- Utilização dos métodos da API (`add`, `get`, `remove`, `size`, `indexOf`, etc.);
-- Iteração com `for-each`;
-- Simplificação das operações de inserção, busca e remoção.
+- Utilização dos métodos da API (`add`, `get`, `remove`, `size`, `indexOf`);
+- Iteração com `for-each`.
 
 ---
 
@@ -82,70 +70,35 @@ Terceira versão da Agenda.
 
 Quarta versão da Agenda.
 
-Nesta versão, a Agenda de Contatos recebeu a implementação da funcionalidade de **alteração de contatos**.
-
-#### Principais características
+Principais características:
 
 - Nova opção no menu: **Alterar contato**;
 - Busca prévia do registro a ser modificado;
-- Atualização dos dados nas listas (`List` / `ArrayList`) utilizando o método `set()`;
-- Reutilização da lógica de validação e busca para localização do registro antes da modificação.
+- Atualização das listas utilizando o método `set()`.
 
 ---
 
 ### v1.0.0 — Modularização com Métodos
 
-Nesta versão, o código procedural foi reorganizado por meio da criação de métodos dentro da mesma classe.
+Reorganização do código procedural em funções/métodos na mesma classe.
 
-#### Principais alterações
+Principais alterações:
 
-- Criação do método `adicionar()`;
-- Criação do método `listar()`;
-- Criação do método `pesquisar()`;
-- Criação do método `atualizar()`;
-- Criação do método `excluir()`;
+- Criação dos métodos `adicionar()`, `listar()`, `pesquisar()`, `atualizar()` e `excluir()`;
 - Simplificação da estrutura do `switch-case` no `main()`;
-- Passagem de dados por meio de parâmetros e argumentos;
-- Organização das responsabilidades do método `main()`.
-
-#### Conceitos trabalhados
-
-- Métodos;
-- Parâmetros;
-- Argumentos;
-- Retorno;
-- `void`;
-- Escopo de variáveis;
-- Modularização;
-- Refatoração.
+- Passagem de dados via parâmetros e argumentos;
+- Estudo de conceitos: escopo de variáveis, retornos (`void`) e refatoração.
 
 ---
 
 ### v1.1.0 — Modularização em Múltiplos Arquivos
 
-Nesta versão, o projeto Agenda de Contatos foi reorganizado com a separação das funcionalidades em diferentes arquivos e classes.
+Organização e separação das responsabilidades em diferentes arquivos do projeto.
 
-#### Principais alterações
+Principais alterações:
 
-- Criação das classes `Uteis` e `Agenda`;
-- Separação das responsabilidades entre as classes;
-- Divisão entre a interface com o usuário (menu no console) e a lógica de processamento dos dados;
-- Reorganização dos métodos e funcionalidades do projeto.
-
-Os contatos continuam sendo armazenados em três listas do tipo `List<String>`:
-
-- nomes;
-- celulares;
-- e-mails.
-
-#### Conceitos trabalhados
-
-- Modularização em múltiplos arquivos;
-- Separação de responsabilidades;
-- Classes;
-- Métodos;
-- Parâmetros e argumentos;
-- Refatoração.
+- Criação de classes dedicadas para auxílio e gerenciamento da agenda (`Uteis`, `Agenda`);
+- Divisão entre a interface com o usuário (menu no console) e a lógica de processamento dos dados.
 
 ---
 
@@ -153,61 +106,71 @@ Os contatos continuam sendo armazenados em três listas do tipo `List<String>`:
 
 Versão de ajuste e refinamento da série v1.x.
 
-#### Principais alterações
+Principais alterações:
 
-- Correção de bug no encerramento da execução da aplicação (opção **Sair**);
+- Correção de bug no encerramento da execução da aplicação (opção de saída do menu);
 - Garantia do fechamento correto dos fluxos de leitura do `Scanner`.
-
-Esta versão mantém a estrutura da v1.1.0, introduzindo principalmente a correção relacionada ao fluxo de encerramento da aplicação.
 
 ---
 
 ### v2.1.0 — Persistência de Dados em Arquivo Texto (TXT)
 
-Nesta versão, foi introduzida a **persistência de dados**.
+Introdução da **persistência de dados**. Os contatos cadastrados deixam de ser perdidos ao encerrar a aplicação e passam a ser gravados em disco em arquivo texto formato `.txt`.
 
-Os contatos cadastrados deixam de ser perdidos ao encerrar a aplicação e passam a ser gravados em disco em um arquivo de texto `.txt`.
-
-#### Principais características e conceitos
+Principais características e conceitos:
 
 - Leitura e escrita de dados em disco utilizando a API `java.io`;
 - Representação e verificação do arquivo com `File`;
 - Leitura estruturada linha a linha com `FileReader` e `BufferedReader`;
-- Gravação e manipulação do fluxo de escrita com `FileWriter` e `PrintWriter`;
+- Gravação e manipulação de fluxo de escrita com `FileWriter` e `PrintWriter`;
 - Carregamento automático dos contatos ao iniciar a aplicação;
 - Atualização e sincronização do arquivo texto nas operações de inserção, alteração e exclusão;
 - Tratamento de exceções de entrada e saída (`IOException`).
 
 ---
 
+### v3.0.0 — Introdução a Classes e Objetos
+
+Início da transição da abordagem procedural para a **Programação Orientada a Objetos (POO)**.
+
+Nesta versão é criada a classe `Contato`, permitindo representar um contato como uma entidade do sistema e agrupar suas informações em um único objeto.
+
+Principais características e conceitos:
+
+- Introdução ao paradigma de Programação Orientada a Objetos;
+- Comparação entre a abordagem procedural e a abordagem orientada a objetos;
+- Identificação e modelagem da entidade `Contato`;
+- Criação da classe `Contato`;
+- Definição dos atributos `nome`, `celular` e `email`;
+- Criação e instanciação de objetos;
+- Utilização do operador `new`;
+- Acesso aos atributos de um objeto;
+- Criação de diferentes objetos a partir da mesma classe;
+- Introdução aos conceitos de referência e estado de um objeto.
+
+---
+
 ## Versão Atual
 
-**v2.1.0 — Persistência de dados em arquivos TXT (`java.io`)**
-
-### Próximas versões
-
-O projeto continuará evoluindo.
+**v3.0.0** — Introdução à Programação Orientada a Objetos com classes e objetos.
 
 ---
 
 ## Controle de Versões
 
-As versões estáveis do projeto são identificadas por tags Git.
-
-Exemplo:
-
-```text
+As versões estáveis do projeto são identificadas por tags Git:
+```
 - v0
   - v0.0.0
   - v0.1.0
   - v0.2.0
   - v0.3.0
-
 - v1
   - v1.0.0
   - v1.1.0
   - v1.1.1
-
 - v2
   - v2.1.0
+- v3
+  - v3.0.0
 ```
