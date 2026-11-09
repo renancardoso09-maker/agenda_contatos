@@ -1,372 +1,174 @@
 # Agenda de Contatos
 
-Projeto didático desenvolvido em Java para acompanhar a evolução dos conceitos trabalhados na disciplina de Programação Orientada a Objetos (POO).
+Aplicação desenvolvida em **Java** para gerenciamento de contatos, construída de forma incremental como parte das atividades da disciplina de **Programação Orientada a Objetos (POO)**.
 
-O sistema é desenvolvido de forma incremental. Cada versão introduz novos conceitos, estruturas e melhorias sobre a versão anterior.
+O projeto acompanha a evolução dos conceitos de programação, desde a utilização de variáveis e estruturas de dados até a aplicação de princípios de orientação a objetos, organização em camadas, persistência e interfaces gráficas.
+
+**Versão atual: V4.1.0 — DAO Orientado a Objetos**
 
 ## Objetivo
 
-Construir uma Agenda de Contatos completa, iniciando com uma solução procedural simples e evoluindo gradualmente para uma aplicação organizada com conceitos de Programação Orientada a Objetos, interface gráfica e persistência de dados.
+Desenvolver uma aplicação que permita cadastrar, listar, pesquisar, atualizar e excluir contatos, aplicando progressivamente os conceitos estudados na disciplina.
 
-## Evolução do Projeto
+## Funcionalidades
 
-| Versão | Armazenamento / Recursos | Descrição |
-|---|---|---|
-| v0.0.0 | Variáveis simples | Permite armazenar apenas um contato em memória |
-| v0.1.0 | Arrays | Permite vários contatos com capacidade fixa |
-| v0.2.0 | List + ArrayList | Permite vários contatos com tamanho dinâmico |
-| v0.3.0 | List + ArrayList | Adiciona a opção de alteração de contatos cadastrados |
-| v1.0.0 | List + ArrayList | Modularização das funcionalidades em métodos na classe principal |
-| v1.1.0 | List + ArrayList | Separação das responsabilidades e métodos em arquivos/classes utilitárias |
-| v1.1.1 | List + ArrayList | Correção de bug no fluxo de encerramento do sistema (opção Sair) |
-| v2.1.0 | Arquivo TXT (I/O Java) | Persistência de dados em arquivo texto utilizando `java.io` |
-| v3.0.0 | Classes e Objetos | Introdução à Programação Orientada a Objetos com a criação da classe `Contato` |
-| v3.1.0 | Coleção de Objetos | Armazenamento de objetos `Contato` utilizando `List<Contato>` |
-| v3.2.0 | CRUD Orientado a Objetos | Adaptação das operações CRUD e da persistência para utilizar `List<Contato>` |
-| v3.3.0 | Encapsulamento | Encapsulamento e melhoria da modelagem da classe `Contato` |
+- Adicionar contatos.
+- Listar contatos cadastrados.
+- Pesquisar contatos.
+- Atualizar informações.
+- Excluir contatos.
+- Salvar contatos em arquivo TXT.
+- Recuperar contatos automaticamente ao iniciar a aplicação.
+- Apresentar informações sobre o sistema.
 
-## Histórico de Versões
+Cada contato possui os seguintes atributos:
 
-### v0.0.0 — Versão Inicial
+- Nome
+- Celular
+- E-mail
 
-Primeira versão da Agenda de Contatos.
+## Tecnologias utilizadas
 
-Nesta versão, os dados de um contato são armazenados utilizando variáveis simples.
+- Java
+- Programação Orientada a Objetos
+- Collections Framework (`List` e `ArrayList`)
+- Manipulação de arquivos TXT
+- Tratamento de exceções
+- Git e GitHub
 
-Principais características e conceitos:
-
-- Entrada e saída de dados;
-- Utilização da classe `Scanner`;
-- Estruturas condicionais;
-- Estruturas de repetição;
-- Menu de opções;
-- Armazenamento de apenas um contato em memória.
-
-### v0.1.0 — Arrays
-
-Evolução da Agenda de Contatos para permitir o armazenamento de vários contatos.
-
-Principais características e conceitos:
-
-- Introdução a arrays;
-- Armazenamento de vários contatos;
-- Utilização de índices;
-- Capacidade fixa de armazenamento;
-- Percurso dos dados utilizando estruturas de repetição.
-
-### v0.2.0 — List e ArrayList
-
-Substituição dos arrays por coleções dinâmicas.
-
-Principais características e conceitos:
-
-- Introdução à interface `List`;
-- Utilização da classe `ArrayList`;
-- Introdução a Generics;
-- Utilização de `List<String>`;
-- Inserção de elementos com `add()`;
-- Recuperação de elementos com `get()`;
-- Remoção de elementos com `remove()`;
-- Armazenamento dinâmico de contatos.
-
-### v0.3.0 — Alteração de Contatos
-
-Inclusão da funcionalidade de alteração dos dados de um contato já cadastrado.
-
-Principais características e conceitos:
-
-- Pesquisa de contatos;
-- Identificação da posição de um contato;
-- Alteração de elementos utilizando `set()`;
-- Ampliação das operações do CRUD;
-- Manipulação dos dados armazenados nas listas.
-
-### v1.0.0 — Modularização
-
-Reorganização do código da Agenda de Contatos por meio da criação de métodos.
-
-Principais características e conceitos:
-
-- Introdução à modularização;
-- Criação de métodos;
-- Passagem de parâmetros;
-- Separação das funcionalidades da aplicação;
-- Redução da quantidade de código no método `main`;
-- Organização das operações da Agenda.
-
-### v1.1.0 — Separação em Classes
-
-Evolução da modularização com a distribuição das funcionalidades em diferentes arquivos e classes.
-
-Principais características e conceitos:
-
-- Organização do projeto em diferentes classes;
-- Separação das funcionalidades da Agenda;
-- Criação da classe `Agenda`;
-- Criação da classe `Uteis`;
-- Redução das responsabilidades da classe `Principal`;
-- Melhoria na organização e manutenção do código.
-
-### v1.1.1 — Correção do Fluxo de Saída
-
-Versão de correção da Agenda de Contatos.
-
-Principais características:
-
-- Correção do comportamento da opção Sair;
-- Ajuste do fluxo de encerramento da aplicação;
-- Manutenção da estrutura implementada na v1.1.0.
-
-### v2.1.0 — Persistência em Arquivo TXT
-
-Introdução da persistência dos dados utilizando arquivos.
-
-Nesta versão, os contatos deixam de existir somente durante a execução da aplicação e passam a ser armazenados em um arquivo texto.
-
-Principais características e conceitos:
-
-- Introdução à persistência de dados;
-- Criação da classe `Persistencia`;
-- Utilização de classes do pacote `java.io`;
-- Escrita de dados em arquivo;
-- Leitura de dados do arquivo;
-- Carregamento dos contatos ao iniciar a aplicação;
-- Salvamento dos contatos ao encerrar a aplicação;
-- Utilização do arquivo `contatos.txt`.
-
-Os dados são armazenados utilizando o formato:
+## Estrutura do projeto
 
 ```text
-nome;celular;email
+AgendaContatos/
+├── src/
+│   └── br/
+│       └── edu/
+│           ├── principal/
+│           │   └── Principal.java
+│           ├── modelo/
+│           │   └── Contato.java
+│           ├── servico/
+│           │   └── Agenda.java
+│           ├── dao/
+│           │   └── ContatoDAO.java
+│           └── uteis/
+│               └── Uteis.java
+├── contatos.txt
+└── README.md
 ```
 
-### v3.0.0 — Introdução a Classes e Objetos
+O arquivo `contatos.txt` é utilizado para armazenar os dados e será criado durante a gravação, caso ainda não exista.
 
-Início da transição da abordagem procedural para a **Programação Orientada a Objetos (POO)**.
+## Organização das classes
 
-Nesta versão é criada a classe `Contato`, permitindo representar um contato como uma entidade do sistema e agrupar suas informações em um único objeto.
+| Classe | Responsabilidade |
+|---|---|
+| `Principal` | Inicializar e coordenar a execução da aplicação. |
+| `Contato` | Representar os dados de um contato. |
+| `Agenda` | Implementar as operações do CRUD. |
+| `ContatoDAO` | Realizar a leitura e gravação dos contatos em arquivo. |
+| `Uteis` | Disponibilizar funcionalidades auxiliares da aplicação. |
 
-Principais características e conceitos:
+## V4.1.0 — DAO Orientado a Objetos
 
-- Introdução ao paradigma de Programação Orientada a Objetos;
-- Comparação entre a abordagem procedural e a abordagem orientada a objetos;
-- Identificação e modelagem da entidade `Contato`;
-- Criação da classe `Contato`;
-- Definição dos atributos `nome`, `celular` e `email`;
-- Criação e instanciação de objetos;
-- Utilização do operador `new`;
-- Acesso aos atributos de um objeto;
-- Criação de diferentes objetos a partir da mesma classe;
-- Introdução aos conceitos de referência e estado de um objeto.
+Nesta versão, aprimoramos a implementação do padrão **DAO (Data Access Object)**, introduzido na V4.0.0.
 
-### v3.1.0 — Coleção de Objetos
+Anteriormente, os métodos de persistência eram estáticos e acessados diretamente pela classe `ContatoDAO`.
 
-Evolução da representação dos contatos utilizando uma coleção de objetos do tipo `Contato`.
+Agora, utilizamos um objeto DAO, criado por meio de um construtor.
 
-Nesta versão, os conceitos de `List` e `ArrayList`, já utilizados anteriormente com `String`, são aplicados à classe `Contato`, permitindo armazenar vários contatos em uma única coleção.
+### Principais alterações
 
-Principais características e conceitos:
+- Introdução do atributo privado `caminhoArquivo`.
+- Implementação de construtor para configurar o arquivo utilizado.
+- Conversão dos métodos estáticos em métodos de instância.
+- Atualização da classe `Principal` para instanciar o DAO.
+- Manutenção da separação entre CRUD e persistência.
+- Refinamento do método `toString()` da classe `Contato`.
+- Melhoria no tratamento de erros durante a gravação.
+- Implementação de retorno `boolean` no método `salvarContatos()`.
 
-- Revisão de `List`, `ArrayList` e Generics;
-- Criação de uma coleção `List<Contato>`;
-- Armazenamento de objetos `Contato` utilizando o método `add()`;
-- Recuperação de objetos da coleção utilizando `get()`;
-- Percurso da coleção utilizando `for-each`;
-- Acesso aos atributos dos objetos armazenados;
-- Introdução ao conceito de referência de objetos em coleções;
-- Comparação entre listas paralelas de `String` e uma única coleção de objetos;
-- Representação de cada contato como uma entidade completa dentro da coleção.
-
-### v3.2.0 — CRUD Orientado a Objetos
-
-Evolução das operações da Agenda de Contatos para trabalhar diretamente com objetos da classe `Contato`.
-
-Nesta versão, as três listas independentes utilizadas para armazenar nomes, celulares e e-mails são substituídas por uma única coleção `List<Contato>`.
-
-As operações do CRUD passam a manipular diretamente os objetos armazenados nessa coleção.
-
-Principais características e conceitos:
-
-- Adaptação das operações de adicionar, listar, pesquisar, alterar e excluir contatos;
-- Utilização de `List<Contato>` em todo o CRUD;
-- Criação de um novo objeto `Contato` para cada cadastro;
-- Percurso da coleção utilizando `for-each`;
-- Pesquisa de contatos por meio dos atributos dos objetos;
-- Manipulação do estado dos objetos;
-- Utilização de referências para localizar e alterar objetos;
-- Remoção de objetos da coleção;
-- Eliminação das listas paralelas de nomes, celulares e e-mails;
-- Adaptação da persistência para trabalhar com `List<Contato>`;
-- Reconstrução dos objetos `Contato` durante a leitura do arquivo;
-- Manutenção do formato `nome;celular;email` no arquivo `contatos.txt`.
-
-### v3.3.0 — Encapsulamento e Modelagem da Classe
-
-Evolução da classe `Contato` para proteger seu estado interno e controlar o acesso aos seus atributos.
-
-Os atributos, anteriormente públicos, passam a utilizar o modificador de acesso `private`.
-
-```java
-private String nome;
-private String celular;
-private String email;
-```
-
-O acesso aos dados passa a ser realizado por meio de métodos getters:
-
-```java
-public String getNome() {
-    return nome;
-}
-```
-
-A alteração dos dados passa a ser realizada por meio de métodos setters:
-
-```java
-public void setNome(String nome) {
-    this.nome = nome;
-}
-```
-
-Também é criado um construtor para permitir que um objeto `Contato` seja inicializado com seus dados no momento da criação:
-
-```java
-public Contato(String nome, String celular, String email) {
-    this.nome = nome;
-    this.celular = celular;
-    this.email = email;
-}
-```
-
-Assim, a criação de um contato passa a ser realizada diretamente:
-
-```java
-Contato contato = new Contato(nome, celular, email);
-```
-
-Principais características e conceitos:
-
-- Introdução ao encapsulamento;
-- Utilização do modificador de acesso `private`;
-- Proteção dos atributos da classe `Contato`;
-- Criação de métodos getters;
-- Criação de métodos setters;
-- Leitura controlada dos atributos;
-- Alteração controlada do estado dos objetos;
-- Criação de construtor com parâmetros;
-- Utilização da palavra-chave `this`;
-- Diferenciação entre atributos do objeto e parâmetros;
-- Adaptação das operações CRUD para utilizar getters e setters;
-- Adaptação da persistência para utilizar getters;
-- Reconstrução dos objetos utilizando o construtor;
-- Eliminação do acesso direto aos atributos fora da classe `Contato`.
-
-## Estrutura Atual
-
-A aplicação utiliza uma única coleção de objetos:
+### Exemplo de utilização
 
 ```java
 List<Contato> contatos = new ArrayList<>();
+
+ContatoDAO dao = new ContatoDAO("contatos.txt");
+
+// Carregar os contatos
+dao.carregarContatos(contatos);
+
+// Salvar os contatos
+boolean salvou = dao.salvarContatos(contatos);
 ```
 
-Cada contato é representado por uma instância da classe `Contato`:
+O objeto `dao` mantém a configuração do arquivo e disponibiliza os métodos necessários para realizar a persistência.
 
-```java
-Contato contato = new Contato(nome, celular, email);
-```
+### Persistência dos dados
 
-A classe `Contato` é responsável pela representação e pelo acesso controlado aos seus dados:
+Os contatos são armazenados no arquivo `contatos.txt`, utilizando o caractere `;` como separador.
 
-```java
-public class Contato {
-
-    private String nome;
-    private String celular;
-    private String email;
-
-    public Contato(String nome, String celular, String email) {
-        this.nome = nome;
-        this.celular = celular;
-        this.email = email;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCelular() {
-        return celular;
-    }
-
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-}
-```
-
-A estrutura principal da aplicação permanece:
+Exemplo:
 
 ```text
-Principal
-    │
-    └── List<Contato>
-            │
-            ├── Agenda
-            │     ├── adicionar()
-            │     ├── listar()
-            │     ├── pesquisar()
-            │     ├── atualizar()
-            │     └── excluir()
-            │
-            └── Persistencia
-                  ├── carregarContatos()
-                  └── salvarContatos()
+Maria;85999999999;maria@email.com
+João;85988888888;joao@email.com
 ```
 
-Os dados continuam sendo armazenados no arquivo `contatos.txt`:
+Ao iniciar a aplicação, os contatos são carregados do arquivo para a coleção em memória.
 
-```text
-nome;celular;email
-```
+Ao selecionar a opção de saída, a aplicação tenta salvar os dados atualizados.
 
-## Tecnologias e Conceitos
+Caso ocorra um erro durante a gravação, a aplicação apresenta uma mensagem e permanece em execução.
 
-- Java;
-- Programação Orientada a Objetos;
-- Classes e objetos;
-- Encapsulamento;
-- Modificadores de acesso;
-- Getters e setters;
-- Construtores;
-- Palavra-chave `this`;
-- Java Collections Framework;
-- `List`;
-- `ArrayList`;
-- Java I/O;
-- Persistência em arquivo;
-- Git;
-- GitHub.
+## Histórico de versões
 
-## Versão Atual
+| Versão | Descrição |
+|---|---|
+| **V0.0.0** | Introdução às variáveis e cadastro de um contato. |
+| **V0.1.0** | Utilização de arrays para armazenar contatos. |
+| **V0.2.0** | Introdução a `List` e `ArrayList`. |
+| **V0.3.0** | Implementação das operações do CRUD. |
+| **V1.0.0** | Modularização das funcionalidades em métodos. |
+| **V1.1.0** | Organização dos métodos em classes. |
+| **V1.1.1** | Correção do funcionamento da opção de saída. |
+| **V2.0.0** | Introdução à manipulação de arquivos. |
+| **V2.1.0** | Persistência dos contatos em arquivo TXT. |
+| **V3.0.0** | Introdução aos conceitos de classe e objeto. |
+| **V3.1.0** | Utilização de `ArrayList<Contato>`. |
+| **V3.2.0** | CRUD utilizando objetos. |
+| **V3.3.0** | Encapsulamento e aprimoramento da classe `Contato`. |
+| **V4.0.0** | Introdução ao padrão DAO e organização em pacotes. |
+| **V4.1.0** | DAO orientado a objetos, com construtor e métodos de instância. |
 
-**v3.3.0 — Encapsulamento e Modelagem da Classe**
+## Conceitos trabalhados na V4.1.0
 
-Nesta versão, concluímos a etapa inicial de fundamentos de Programação Orientada a Objetos, evoluindo desde a criação da classe `Contato` até o encapsulamento de seus atributos.
+- Classes e objetos.
+- Instanciação com `new`.
+- Construtores.
+- Encapsulamento.
+- Palavra-chave `this`.
+- Métodos estáticos e métodos de instância.
+- Compartilhamento de referências.
+- Separação de responsabilidades.
+- Persistência de objetos em arquivos.
+- Tratamento de exceções.
+- Retorno de métodos.
 
-## Próxima Evolução
+## Execução
 
-**V4 — Padrão DAO**
+Para executar o projeto:
 
-A próxima etapa do projeto será dedicada à separação da lógica de acesso aos dados, preparando a aplicação para evoluções futuras nos mecanismos de persistência.
+1. Instalar o Java JDK.
+2. Abrir o projeto em uma IDE Java.
+3. Localizar a classe `Principal`, no pacote `br.edu.principal`.
+4. Executar o método `main()`.
+5. Utilizar o menu apresentado no terminal.
+
+Os contatos serão carregados automaticamente quando o arquivo de dados estiver disponível.
+
+## Próxima versão
+
+**V5.0.0 — Introdução ao MVC**
+
+Na próxima versão, vamos introduzir o padrão arquitetural **Model-View-Controller (MVC)**, aprimorando a separação entre os dados, a apresentação e o controle das operações da aplicação.
